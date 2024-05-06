@@ -1,0 +1,56 @@
+:root {
+    --cinzaBk: #262626;
+    --corNum: #174031;
+    --tonVerde: #2C7359;
+    --preto: #0D0D0D;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+body, html {
+    background-color: white;
+}
+
+section#movimentacao > form#form {
+    display: none;
+}
+
+section#movimentacao {
+    width: 100%;
+    height: 35%;
+    background-color: var(--corNum);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 30% 30%;
+}
+
+div#saldoTotal > p#saldo {
+    color: white;
+}
+
+section#extrato {
+    width: 100%;
+    height: 75%;
+    border: none;
+    background-color: white;
+    margin-top: 10px;
+}
+
+section#extrato > div#caixaExtrato  {
+    padding-left: 10px;
+}
+
+div#caixaPopUp > div#popUp {
+    width: 80%;
+}
+
