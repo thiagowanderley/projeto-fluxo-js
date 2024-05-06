@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Controle de Caixa</title>
+</head>
+<body>
+<main>
+
+    <section id="movimentacao">
+
+            <div id="saldoTotal">
+                <p id="saldo"></p>
+            </div>
+
+        <form action="" id="form">
+            <label for="opcoes">Movimentação:</label>
+
+            <select name="opcoes" id="opcoes">
+                <option value="inicial" disabled selected>Selecione uma opção</option>
+                <option value="resgate">PAGAMENTO</option>
+                <option value="aplicacao">RECEBIMENTO</option>
+            </select>
+
+            <div id="valorInput" style="display: none;"> <!-- Display none -->
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" name="valor" min="1">
+            </div>
+        
+            <div id="motivoResgate" style="display: none;"> <!-- Display none -->
+                <label for="motivo" style="width: 70%;">Justificativa:</label>
+                <textarea id="motivo" name="motivo"></textarea>
+            </div>
+            
+            <div id="buttons">
+                <button type="submit" id="enviarDados">CONFIRMAR</button>
+            </div>
+        
+        </form>
+
+    </section>
+
+    <section id="extrato">
+        <p>EXTRATO</p>
+        <div id="caixaExtrato">
+            <ul id="listaExtrato">
+                
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<div id="caixaPopUp" style="display: none;">
+    <div id="popUp">
+        <button id="fechar">&times;</button>
+        <p id="conteudoPopUp"></p>
+    </div>
+</div>
+
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

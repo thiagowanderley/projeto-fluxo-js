@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+:root {
+    --cinzaBk: #262626;
+    --corNum: #174031;
+    --tonVerde: #2C7359;
+    --preto: #0D0D0D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+}
+
+main {
+    display: flex;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 75%;
+    border-radius: 15px;
+    background-color: white;
+    padding: 10px;
+}
+
+section#movimentacao > div#saldoTotal {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+    border-radius: 15px;
+    text-shadow: 2px 0px 5px rgba(0, 0, 0, 0.4);
+    color: var(--tonVerde);
+    font-weight: bold;
+}
+
+div#saldoTotal > p#saldo {
+    font-size: 2.5em;
+}
+
+section#movimentacao > form {
+    height: 65%;
+    display: flex;
+    align-items: center;
+    justify-content:first baseline;
+    flex-direction: column;
+}
+
+form > select {
+    margin: 5px;
+    border: none;
+    width: 60%;
+    height: 35px;
+    font-size: 0.8em;
+    border: none;
+    border-bottom: 2px solid var(--corNum);
+    outline: none;
+}
+
+form > div#valorInput, form > div#motivoResgate {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+div#valorInput > input#valor {
+    width: 60%;
+    height: 35px;
+    font-size: 0.9em;
+    border: none;
+    border-bottom: 2px solid var(--corNum);
+    outline: none;
+    padding-left: 8px;
+}
+
+div#motivoResgate > textarea#motivo {
+    width: 70%;
+    height: 60px;
+    resize: none;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 5px;
+    border: solid var(--corNum) 2px;
+}
+
+label {
+    width: 60%;
+    text-align: left;
+}
+
+div#buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+button#enviarDados {
+    margin-top: 5px;
+    width: 30%;
+    height: 30px;
+    border: none;
+    background-color: white;
+    color: var(--preto);
+}
+
+button#enviarDados:hover {
+    color: var(--preto);
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+    border-bottom: solid var(--corNum) 2px;    
+}
+
+button#botaoReiniciar {
+    margin-top: 5px;
+    width: 30%;
+    height: 30px;
+    border: none;
+    background-color: white;
+    color: var(--preto);
+}
+
+button#botaoReiniciar:hover {
+    color: var(--preto);
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+    border-bottom: solid var(--corNum) 2px;
+}
+
+button#botaoEnviar {
+    margin-top: 5px;
+    width: 30%;
+    height: 30px;
+    border: none;
+    background-color: white;
+    color: var(--preto);
+}
+
+button#botaoEnviar:hover {
+    color: var(--preto);
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+    border-bottom: solid var(--corNum) 2px;
+}
+
+section#movimentacao, section#extrato {
+    width: 50%;
+}
+
+/*---------------------extrato----------------------*/
+
+section#extrato {
+    border-left: solid var(--corNum) 4px;
+}
+
+section#extrato > div#caixaExtrato {
+    width: 97%;
+    height: 90%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 15px;
+    overflow: auto;
+}
+
+div#caixaExtrato > ul#listaExtrato {
+    list-style: none;
+}
+
+a.link-lista {
+    text-decoration: none;
+    color: #174031;
+}
+
+a.link-lista:hover {
+    text-decoration: underline;
+    color: var(--tonVerde);
+}
+
+ul > li {
+    margin: 10px;
+}
+
+section#extrato > p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.0em;
+    color: var(--tonVerde);
+    margin-bottom: 5px;
+}
+
+/*---------------------modal----------------------*/
+
+div#caixaPopUp {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.486);
+}
+
+div#caixaPopUp > div#popUp {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 15px;
+    border: solid var(--corNum) 2px;
+}
+
+button#fechar {
+    border: none;
+    background-color: white;
+    font-size: 1.3em;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+button#fechar:hover {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--tonVerde);
+}
+
+
