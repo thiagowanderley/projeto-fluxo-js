@@ -4,6 +4,36 @@ const opcoes = document.getElementById('opcoes');
 const mostradorSaldo = document.querySelector('p#saldo');
 let saldoTotal = 0;
 
+function validarSenha () {
+    const validacao = document.getElementById('validacao');
+    const formSenha = document.getElementById('validacaoSenha');
+    const inputSenha = document.getElementById('senha');
+    const botaoEnviarSenha = document.getElementById('verificarSenha');
+    const mensagemSenha = document.getElementById('resultadoSenha');
+    const senha = 'Sakai2020'
+
+    inputSenha.focus();
+
+    formSenha.addEventListener('submit', function (e) {
+        e.preventDefault();
+    })
+
+    botaoEnviarSenha.addEventListener('click', function () {
+        if (!inputSenha.value) {
+            return alert('Prencha os campos solicitados');
+
+        } else if (inputSenha.value !== senha) {
+            mensagemSenha.style.display = 'flex';
+            inputSenha.value = '';
+            inputSenha.focus();
+        } else {
+            validacao.style.display = 'none';
+        }
+    })
+}
+
+validarSenha()
+
 function saldoBrl (num) {
     const saldoConvertido = num.toLocaleString('pt-BR', {
         style: 'currency',
