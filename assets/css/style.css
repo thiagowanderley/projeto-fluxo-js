@@ -89,7 +89,21 @@ form > div#valorInput, form > div#motivoResgate {
     width: 100%;
 }
 
-div#valorInput > input#valor {
+form > div#valorInput {
+    display: flex;
+    flex-direction: row;
+}
+
+div#caixaData > input#inputData {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--corNum);
+    font-size: 0.9em;
+    position: relative;
+    top: 7px;
+}
+
+div#valorInput > div#caixaValorInput > input#valor {
     width: 60%;
     height: 35px;
     font-size: 0.9em;

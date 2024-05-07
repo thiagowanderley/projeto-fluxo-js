@@ -2,6 +2,7 @@ const valor = document.getElementById('valor');
 const motivo = document.getElementById('motivo');
 const opcoes = document.getElementById('opcoes');
 const mostradorSaldo = document.querySelector('p#saldo');
+const inputData = document.querySelector('input#inputData')
 let saldoTotal = 0;
 
 function validarSenha () {
@@ -56,7 +57,7 @@ function mostrarOpcoes () {
 
     buttonConfirmar.addEventListener('click', function () {
 
-        if (opcoes.value === 'resgate' || opcoes.value === 'aplicacao') {
+        if (opcoes.value === 'pagamento' || opcoes.value === 'recebimento') {
         inputValor.style.display = 'flex';
         caixaDeTexto.style.display = 'flex';
         buttonConfirmar.style.display = 'none';
@@ -98,14 +99,14 @@ function criarBotaoEnviar () {
     const btnEnviar = document.getElementById('botaoEnviar')
     
     btnEnviar.addEventListener('click', function () {
-        if (!valor.value || !motivo.value) {
+        if (!valor.value || !motivo.value || !inputData.value) {
             return alert('Preencha os campos corretamente');
             
-        } else if (opcoes.value === 'resgate') {
+        } else if (opcoes.value === 'pagamento') {
             saldoTotal -= Number(valor.value)
             mostradorSaldo.innerHTML = saldoBrl(saldoTotal);
 
-        } else if (opcoes.value === 'aplicacao') {
+        } else if (opcoes.value === 'recebimento') {
             saldoTotal += Number(valor.value)
             mostradorSaldo.innerHTML = saldoBrl(saldoTotal);
         }
@@ -138,7 +139,7 @@ function criarLink () {
     const linkDoLi = criarElemento('a', 'class', 'link-lista')
     linkDoLi.innerHTML = `
 
-    <strong>${opcoes.value}</strong> - Valor:${saldoBrl(Number(valor.value))} <strong>Data</strong>:${criarData()} <strong>Saldo:</strong>${saldoBrl(saldoTotal)}
+    <strong>${opcoes.value.toUpperCase()}</strong> - Valor:${saldoBrl(Number(valor.value))} <strong>Data</strong>:${inputData.value} <strong>Saldo:</strong>${saldoBrl(saldoTotal)}
     
     `;
     linkDoLi.href = '#';
@@ -158,8 +159,10 @@ function conteudoPopUp () {
     <p><strong>${opcoes.value.toUpperCase()}</strong></p><br>
     <p><strong>Valor:</strong>${saldoBrl(Number(valor.value))}</p>
     <p><strong>Motivo:</strong>${motivo.value}</p> <br>
-    <p><strong>Data:</strong>${criarData()}  <strong>Hora:</strong>${criarHora()}</p>
+    <p><strong>Data:</strong>${inputData.value}  
     `
+    //<strong>Hora:</strong>${criarHora()}</p>
+
     botaoFechar.addEventListener('click', function () {
         caixaPopUp.style.display = 'none';
     })
@@ -180,4 +183,6 @@ function criarHora () {
 
     return hora;
 }
+
+
 
