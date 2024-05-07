@@ -85,6 +85,7 @@ function criarBotaoReiniciar () {
             valor.value = '';
             motivo.value = '';
             motivo.placeholder = '';
+            inputData.value = '';
             opcoes.value = 'inicial'
     });
 console.log('botão reiniciar criado', btnReiniciar);
@@ -120,7 +121,6 @@ function criarBotaoEnviar () {
     });
 }
 
-
 function criarElemento(tag, atributo, idAtributo) {
     const newElemento = document.createElement(tag);
     newElemento.setAttribute(atributo, idAtributo);
@@ -140,7 +140,6 @@ function criarLink () {
     linkDoLi.innerHTML = `
 
     <strong>${opcoes.value.toUpperCase()}</strong> - Valor:${saldoBrl(Number(valor.value))} <strong>Data</strong>:${inputData.value} <strong>Saldo:</strong>${saldoBrl(saldoTotal)}
-    
     `;
     linkDoLi.href = '#';
 
