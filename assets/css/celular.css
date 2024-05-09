@@ -54,3 +54,7 @@ div#caixaPopUp > div#popUp {
     width: 80%;
 }
 
+div#validacao {
+    display: none;
+}
+
